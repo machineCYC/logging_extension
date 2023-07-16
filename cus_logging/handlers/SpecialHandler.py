@@ -1,33 +1,12 @@
 import logging
 from dataclasses import asdict
-from dataclasses import dataclass
-from typing import Any
 
 import requests
 from requests.adapters import HTTPAdapter
 from requests.packages.urllib3.util.retry import Retry
 
+from cus_logging.data_models import MonitorEnpointBase
 
-class MonitorBase:
-    """
-    do some validate
-    """
-    def _check_nested_field(self, attr_name:str, _cls:Any) -> None:
-        pass
-
-
-class MonitorEnpointBase(MonitorBase):
-    endpoint: str
-
-
-@dataclass
-class MonitorLog(MonitorEnpointBase):
-    job_name: str
-    job_start_time: str
-
-    def __post_init__(self):
-        self.endpoint = "monitor/job"
-        # self._check_nested_field("task", Task)
 
 class SpecialHandler(logging.Handler):
 

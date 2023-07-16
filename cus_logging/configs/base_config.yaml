@@ -1,0 +1,18 @@
+version: 1
+formatters:
+  main:
+    format: "%(module)s - %(levelname)s - %(funcName)s - %(lineno)s: %(message)s"
+handlers:
+  stdhandler:
+    class: logging.StreamHandler
+    level: INFO
+    formatter: main
+    stream: ext://sys.stdout
+  specialhandler:
+    class: cus_logging.handlers.SpecialHandler
+    formatter: main
+loggers:
+  root:
+    handlers: [stdhandler, specialhandler]
+    level: DEBUG
+    propagate: no
