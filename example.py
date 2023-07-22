@@ -8,9 +8,9 @@ from cus_logging.data_models import MonitorLog
 with open("./cus_logging/configs/base_config.yaml", "r") as f:
     logging_config = yaml.load(f, Loader=yaml.FullLoader)
 
-
+print(logging_config)
 dictConfig(logging_config)
-logger = logging.getLogger("cus_logger")
+logger = logging.getLogger("cus-logger")
 logger.debug("logger started")
 
 mes_plaoload = {

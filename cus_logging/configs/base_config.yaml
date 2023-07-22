@@ -5,11 +5,12 @@ formatters:
 handlers:
   stdhandler:
     class: logging.StreamHandler
-    level: INFO
+    level: DEBUG
     formatter: main
     stream: ext://sys.stdout
   specialhandler:
     class: cus_logging.handlers.SpecialHandler
+    level: INFO
     formatter: main
 loggers:
   root:
